@@ -2,6 +2,10 @@
 
 A production-quality, multi-tenant CRM application built with the MERN stack. Supports multiple organizations, role-based access, AI lead insights, email OTP authentication, WhatsApp outreach, and full profile photo management.
 
+**Live App → [https://salespilot-crm.vercel.app](https://salespilot-crm.vercel.app)**
+
+📄 **[Download User Guide (PDF)](./SalesPilot-CRM-Documentation.pdf)**
+
 ---
 
 ## Features

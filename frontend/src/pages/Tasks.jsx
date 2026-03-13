@@ -20,9 +20,13 @@ export default function Tasks() {
   const [form, setForm] = useState({ title: '', description: '', assignedTo: '', leadId: '', dueDate: '', priority: 'Medium' });
 
   useEffect(() => {
+    const usersPromise = user?.role === 'Admin'
+      ? API.get('/users')
+      : Promise.resolve({ data: [user] });
+
     Promise.all([
       API.get('/tasks'),
-      API.get('/users').catch(() => ({ data: [] })),
+      usersPromise,
       API.get('/leads?limit=100').catch(() => ({ data: { leads: [] } })),
     ]).then(([tasksRes, usersRes, leadsRes]) => {
       setTasks(tasksRes.data);
